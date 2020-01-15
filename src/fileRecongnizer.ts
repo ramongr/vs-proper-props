@@ -10,11 +10,11 @@ export function getFileType(): FileType {
   const fileName = getFileName()?.split('/').pop();
   const fileType = fileName?.split('.').pop();
   switch (fileType) {
-    case 'tsx':
+    case 'tsx' || 'ts':
       return FileType.TypeScript;
-    case 'jsx':
+    case 'jsx' || 'js':
       return FileType.Javascript;
+    default:
+      return FileType.None;
   }
-
-  return FileType.None;
 }
