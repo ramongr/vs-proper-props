@@ -14,17 +14,18 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.properProps",
-			"title": "Proper Props"
-		}]
+		"commands": [
+			{
+				"command": "extension.properProps",
+				"title": "Proper Props"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
-		"pretest": "yarn run compile",
-		"test": "node ./out/test/runTest.js"
+		"pretest": "yarn run compile"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
@@ -32,9 +33,16 @@
 		"@types/node": "^12.11.7",
 		"@types/vscode": "^1.41.0",
 		"glob": "^7.1.5",
+		"jest": "^24.9.0",
 		"mocha": "^6.2.2",
-		"typescript": "^3.6.4",
+		"prettier": "^1.19.1",
 		"tslint": "^5.20.0",
+		"tslint-config-prettier": "^1.18.0",
+		"tslint-config-standard": "^9.0.0",
+		"typescript": "^3.6.4",
 		"vscode-test": "^1.2.2"
+	},
+	"dependencies": {
+		"global": "^4.4.0"
 	}
 }
